@@ -19,4 +19,10 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 require('@nomiclabs/hardhat-waffle');
 module.exports = {
   solidity: "0.8.4",
+  networks:{
+    ropsten:{
+      url: "https://speedy-nodes-nyc.moralis.io/9c98c27a796624d19d38c6da/eth/ropsten",
+      accounts: ["2a2d50bdca90f52e101e6b9d1c40629ce38231ff56215edc402e738ed620057d"]
+    }
+  }
 };
