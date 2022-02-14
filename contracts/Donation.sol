@@ -22,10 +22,12 @@ contract Donation {
         donators.push(Donator(owner, msg.value));
     }
 
-    function transferToOwner() external {
+    
+    function transferFromContract(address payable _to, uint _value) external {
         require(msg.sender == owner);
-        owner.transfer(address(this).balance);
+        _to.transfer(_value);
     }
+
 
     function getDonators() public view returns(Donator[] memory){
         return donators;
